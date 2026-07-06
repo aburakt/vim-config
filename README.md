@@ -1,8 +1,8 @@
-# Minimal Neovim & WezTerm Konfigürasyonu
+# Minimal Neovim & Ghostty Konfigürasyonu
 
-Bu repo, kişisel, sadeleştirilmiş ve performans odaklı **Neovim** ve **WezTerm** konfigürasyonlarımı içerir. Tek dosya (`init.lua`) tabanlı, çekirdek API öncelikli bir Neovim yapısı ve minimal bir terminal deneyimi sunar.
+Kişisel, sadeleştirilmiş ve çekirdek API öncelikli **Neovim** konfigürasyonum ile **Ghostty** terminal ayarlarım. Neovim tarafı tek dosya (`init.lua`) tabanlıdır; plugin yönetimi dahil her şey mümkün olduğunca Neovim çekirdeğiyle yapılır.
 
-> Not: Repo adı eski LazyVim döneminden kalmadır. Artık ne LazyVim ne de lazy.nvim kullanılıyor — plugin yönetimi dahil her şey mümkün olduğunca Neovim çekirdeğiyle yapılıyor.
+> Not: Repo adı eski LazyVim döneminden kalmadır. Artık ne LazyVim ne de lazy.nvim kullanılıyor.
 
 ## 🚀 Neovim Kurulumu
 
@@ -11,7 +11,7 @@ Bu repo, kişisel, sadeleştirilmiş ve performans odaklı **Neovim** ve **WezTe
 - **Neovim 0.12+** (zorunlu — `vim.pack`, `'autocomplete'` ve `vim.lsp.completion` çekirdek özellikleri kullanılıyor)
 - `git` ve bir **C derleyici** (treesitter parser derlemek için; macOS: `xcode-select --install`, Windows: VS Build Tools veya `zig`)
 - `ripgrep` (Telescope metin arama)
-- Bir **Nerd Font** (ikonlar için; WezTerm config'i CaskaydiaCove bekliyor)
+- Bir **Nerd Font** ya da ikon destekli font (dosya ağacı ikonları için)
 - Dil sunucuları (PATH'te olmalı, Mason yok): `lua-language-server`, `typescript-language-server`, `vue-language-server`, `pyright`, `gopls`, `astro-ls`, `svelteserver`
 - Formatlayıcılar: `stylua`, `biome` veya `prettier`, `black` (`gofmt` Go ile gelir)
 - Opsiyonel: `lazygit`, `lazydocker` (yüzen terminal kısayolları için)
@@ -72,32 +72,17 @@ git clone https://github.com/aburakt/lazyvim-config.git $env:LOCALAPPDATA\nvim
 
 ---
 
-## 🖥️ WezTerm Kurulumu
+## 🖥️ Ghostty Kurulumu
 
-Göz yormayan, şeffaf ve bulanıklık (blur) efektli, sekmesiz (tabless) minimal terminal yapılandırması.
+Minimal Ghostty yapılandırması: Monaspace Neon fontu, texture healing ve coding ligature'ları aktif.
 
-### Özellikler
-- **Görünüm:** Özel koyu mavi tema, %80 opaklık ve blur efekti.
-- **Font:** CaskaydiaCove Nerd Font.
-- **Minimalizm:** Tab bar kapatıldı, sadece içerik odaklı.
-
-### Kurulum
-
-`wezterm/wezterm.lua` dosyasını home dizininize `.wezterm.lua` olarak kopyalayın veya symlink oluşturun.
+> Ghostty şu an macOS ve Linux'ta mevcut; Windows'ta bu reponun yalnızca Neovim kısmı geçerlidir.
 
 ```bash
 # macOS / Linux
-ln -s $(pwd)/wezterm/wezterm.lua ~/.wezterm.lua
+mkdir -p ~/.config/ghostty
+ln -sf $(pwd)/ghostty/config ~/.config/ghostty/config
 ```
-
-### Kısayollar
-
-| Tuş Kombinasyonu | İşlev |
-|------------------|-------|
-| `Cmd + d` | Ekranı Yatay Böl (Split Horizontal) |
-| `Cmd + Shift + d` | Ekranı Dikey Böl (Split Vertical) |
-| `Cmd + Opt + Oklar` | Pencereler Arası Geçiş |
-| `Cmd + Ctrl + Oklar` | Pencere Boyutlandırma |
 
 ---
 

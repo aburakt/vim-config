@@ -1,0 +1,7 @@
+# Font
+font-family = Monaspace Neon
+font-size = 14
+
+# Monaspace texture healing + coding ligatures
+font-feature = calt
+font-feature = liga
