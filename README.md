@@ -39,6 +39,7 @@ git clone https://github.com/aburakt/vim-config.git $env:LOCALAPPDATA\nvim
 - **Arama:** `telescope.nvim`
 - **Git:** `gitsigns.nvim`
 - **Format:** `conform.nvim` (kayıtta otomatik)
+- **Sözdizimi Renklendirme:** `nvim-treesitter` (main branch). Diller `init.lua`'daki `langs` listesinden derlenir; kapsam: web (js/ts/tsx/jsx, vue, svelte, astro, html, css/scss), backend (php, python, go, java, c/c++, c#, swift, objc), veri & config (json/json5, yaml, toml, xml/svg, sql, markdown/mdx, bash, dockerfile, gitignore, prisma, graphql, twig, properties). Yeni bir dil eklemek için `langs` listesine parser adını yazın; ilk açılışta parser **ve** highlight query'leri birlikte kurulur.
 - **Terminal:** Yerleşik API ile yüzen `lazygit` / `lazydocker` (plugin yok)
 - **Tema:** `github-nvim-theme` (Transparent mod aktif)
 

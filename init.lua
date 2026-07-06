@@ -261,8 +261,25 @@ vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>", { 
 vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep additional_args={'--hidden'}<cr>", { desc = "Metin Ara" })
 vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>", { desc = "Açık Dosyalar" })
 
+-- DOSYA TİPİ DÜZELTMELERİ
+-- .m: varsayılan MATLAB olarak algılanır; iOS projelerinde Objective-C'dir
+-- .mdx: nvim algılamaz; markdown parser'ıyla renklensin (mdx için ayrı parser yok)
+vim.filetype.add({
+  extension = {
+    m = "objc",
+    mdx = "markdown",
+  },
+})
+
 -- TREESITTER (main branch - Neovim 0.11+ uyumlu API)
-local langs = { "lua", "javascript", "typescript", "tsx", "python", "html", "css", "vue", "go", "astro", "svelte" }
+local langs = {
+  "lua", "javascript", "typescript", "tsx", "python", "html", "css", "vue", "go", "astro", "svelte",
+  -- config / veri dosyaları (json = biome.json; bun.lock -> jsonc filetype'ı json parser'ını kullanır)
+  "json", "json5", "yaml", "toml", "markdown", "markdown_inline", "bash",
+  -- diğer diller (php, java, scss, sql, c/c++, xml/svg, objc, docker, graphql, prisma)
+  "php", "java", "scss", "sql", "c", "cpp", "xml", "objc", "dockerfile", "graphql", "prisma", "gitignore",
+  "properties", "swift", "c_sharp", "twig",
+}
 require("nvim-treesitter").install(langs)
 
 -- Highlight'ı dosya tipi açıldığında başlat
