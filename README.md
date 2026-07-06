@@ -2,8 +2,6 @@
 
 Kişisel, sadeleştirilmiş ve çekirdek API öncelikli **Neovim** konfigürasyonum ile **Ghostty** terminal ayarlarım. Neovim tarafı tek dosya (`init.lua`) tabanlıdır; plugin yönetimi dahil her şey mümkün olduğunca Neovim çekirdeğiyle yapılır.
 
-> Not: Repo adı eski LazyVim döneminden kalmadır. Artık ne LazyVim ne de lazy.nvim kullanılıyor.
-
 ## 🚀 Neovim Kurulumu
 
 ### Gereksinimler
@@ -22,12 +20,12 @@ Mevcut Neovim konfigürasyonunuzu yedekledikten sonra:
 
 ```bash
 # macOS / Linux
-git clone https://github.com/aburakt/lazyvim-config.git ~/.config/nvim
+git clone https://github.com/aburakt/vim-config.git ~/.config/nvim
 ```
 
 ```powershell
 # Windows (PowerShell)
-git clone https://github.com/aburakt/lazyvim-config.git $env:LOCALAPPDATA\nvim
+git clone https://github.com/aburakt/vim-config.git $env:LOCALAPPDATA\nvim
 ```
 
 İlk açılışta `vim.pack` tüm eklentileri `nvim-pack-lock.json`'daki revizyonlarla kendisi klonlar, treesitter parser'ları derlenir. Sorun olursa `:checkhealth` ile kontrol edin.
